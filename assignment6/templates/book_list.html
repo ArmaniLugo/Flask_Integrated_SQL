@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div style="padding-left: 20px;">
+        <h4><a href="/">Home</a></h4>
+    </div>
+    <h1>Books List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author ID</th>
+                <th>Publication Date</th>
+                <th>ISBN</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books_list %}
+                <tr>
+                    <td>{{ book.id }}</td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author_id }}</td>
+                    <td>{{ book.publication_date }}</td>
+                    <td>{{ book.ISBN }}</td>
+                    <td>{{ book.summary }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

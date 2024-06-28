@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Reviews</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div style="padding-left: 20px;">
+        <h4><a href="/">Home</a></h4>
+    </div>
+    <h1>Book Reviews</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Book ID</th>
+                <th>Reviewer Name</th>
+                <th>Rating</th>
+                <th>Review Text</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for review in reviews_list %}
+                <tr>
+                    <td>{{ review.id }}</td>
+                    <td>{{ review.book_id }}</td>
+                    <td>{{ review.reviewer_name }}</td>
+                    <td>{{ review.rating }}</td>
+                    <td>{{ review.review_text }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
